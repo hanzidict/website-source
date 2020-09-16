@@ -1,0 +1,36 @@
+{
+  "name": "zen-help",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "devDependencies": {
+    "browserify": "^16.0.0",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-bower": "^0.0.13",
+    "gulp-concat": "^2.6.1",
+    "gulp-config": "^0.3.0",
+    "gulp-gunzip": "1.1.0",
+    "gulp-less": "^3.4.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-plumber": "^1.2.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "~3.0.2",
+    "gulp-util": "^3.0.8",
+    "stringify": "^5.2.0",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "lru-cache": "^4.1.2",
+    "process-nextick-args": "^2.0.0",
+    "util-deprecate": "^1.0.2"
+  }
+}

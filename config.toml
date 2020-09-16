@@ -1,0 +1,25 @@
+baseURL = "https://hanzidict.github.io/"
+title = "Hanzi Network Dictionary"
+disableKinds = ["RSS","taxonomy","taxonomyTerm"]
+contentdir = "content"
+layoutdir =  "layouts"
+staticdir =  "static"
+publishdir = "public"
+
+[permalinks]
+  post = "/posts/:slug/"
+
+[outputFormats.SearchIndex]
+mediaType = "application/json"
+baseName = "searchindex"
+isPlainText = true
+notAlternative = true
+
+[outputFormats.SearchStore]
+mediaType = "application/json"
+baseName = "searchstore"
+isPlainText = true
+notAlternative = true
+
+[outputs]
+home = ["HTML", "searchindex", "searchstore"]

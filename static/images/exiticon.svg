@@ -1,0 +1,24 @@
+<svg width="16" height="20" viewBox="0 0 16 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Sign out</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-200 315)">
+<g id="Sign out">
+<g id="Line Icons">
+<g id="Group">
+<g id="Group">
+<g id="Vector">
+<use xlink:href="#path0_fill" transform="translate(201 -315)" fill="#FFFFFF"/>
+</g>
+</g>
+<g id="Vector">
+<use xlink:href="#path1_fill" transform="translate(200 -309.708)" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 13 20L 2 20C 0.897 20 0 19.103 0 18L 0 15L 2 15L 2 18L 13 18L 13 2L 2 2L 2 5L 0 5L 0 2C 0 0.898 0.897 0 2 0L 13 0C 14.103 0 15 0.898 15 2L 15 18C 15 19.103 14.103 20 13 20Z"/>
+<path id="path1_fill" d="M 7.707 -1.83105e-07L 6.293 1.416L 8.59 3.708L 0 3.708L 0 5.708L 8.582 5.708L 6.292 8.002L 7.708 9.414L 12.414 4.699L 7.707 -1.83105e-07Z"/>
+</defs>
+</svg>

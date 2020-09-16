@@ -1,0 +1,12 @@
+{
+  {{ range $i, $e := .Site.RegularPages }}      
+  {{- if $i }}, {{ end }}  
+  {{ .Permalink | relURL | jsonify }}:
+    {
+        "title": {{ .Title | jsonify }},
+        "description": {{ .Description | jsonify }},
+        "authorName": {{ .Param "author.name" | jsonify }},
+        "authorPic": {{ .Param "author.pic" | jsonify }}
+    }
+  {{- end }}
+}
