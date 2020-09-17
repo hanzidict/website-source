@@ -1,11 +1,10 @@
 var $ = require('jquery');
-var lunr = require('lunr');
 
 var dataIdx = null;
 var dataStore = null;
 
 $(document).ready(function() {
-  require('./search')();
+  //require('./search')();
 
   // var req1 = $.ajax({
   //   url: "/lunr-index.json",
