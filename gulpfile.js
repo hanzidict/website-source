@@ -26,17 +26,17 @@ gulp.task('less', function () {
 });
 
 // Minify and bundle CSS files
-gulp.task('styles', ['less'], function () {
+gulp.task('styles', gulp.series('less', function () {
   return gulp.src(['./src-comp/*.css', '!./src-comp/bundle.css'])
     .pipe(minifyCSS())
     .pipe(concat('bundle.css'))
     .pipe(gulp.dest('./public/'))
     .pipe(gulp.dest('./static/'));
-});
+}));
 
 // Browserify scripts
 gulp.task('browserify', () => {
-  browserify({
+  return browserify({
     entries: './src/index.js',
     debug: true
   })
@@ -63,10 +63,10 @@ gulp.task('clean', function () {
 });
 
 // Default task: full clean+build.
-gulp.task('default', ['browserify', 'styles'], function () { });
+gulp.task('default', gulp.series('browserify', 'styles', function (done) { done(); }));
 
 // Watch: recompile less on changes
 gulp.task('watch', function () {
-  gulp.watch(['./src/*.less'], ['styles']);
-  gulp.watch(['./src/*.js'], ['browserify']);
+  gulp.watch(['./src/*.less'], gulp.series('styles'));
+  gulp.watch(['./src/*.js'], gulp.series('browserify'));
 });
