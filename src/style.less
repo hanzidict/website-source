@@ -1,128 +1,59 @@
 //@import "bariol.less";
 
-@fntBaseFamily: "Rubik", sans-serif;
+@fntBaseFamily: "Open Sans", sans-serif;
+@fntTitleFamily: "Noto Serif", serif;
 @fntBaseSize: 18px;
-@slabWidth: 880px;
-@clrShoulder: #fafafd;
-@clrBorder: #e0e0e0;
-@clrOrange: #f27631;
-@clrBlue: #3b3751;
-@clrText: @clrBlue;
-@clrTextLight: rgb(124, 123, 129);
-@clrTextLighter: lighten(@clrTextLight, 8%);
+@clrText: #303030;
+@clrDarkBase: #ae5d09;
 
 
-.floatblock-mixin { display: block; position: relative; float: left; box-sizing: border-box; }
-* { margin: 0; padding: 0; border: 0; outline: none; }
-div, p, h1, h2, h3, ul, ol, blockquote {
-  position: relative; float: left; box-sizing: border-box; width: 100%;
-  display: block; height: auto; overflow-y: auto;
-}
+* { box-sizing: border-box; }
 html { 
-  height: 100%; font-size: @fntBaseSize; font-family: @fntBaseFamily;
-  border: 0; margin: 0; overflow: hidden; background-color: @clrShoulder;
+  height: 100%; border: 0; margin: 0; padding: 0; overflow-y: scroll;
 }
 body {
-  position: relative; width: 100%; height: 100%; overflow-y: scroll;
+  background-color: #fcfbf4; background-image: url("images/redox-02.png");
+  margin: 0; position: relative;
+  width: 100%; min-height: 100%; padding-bottom: 56px;
   box-sizing: border-box; color: @clrText;
   -webkit-overflow-scrolling: touch;
+  font-size: @fntBaseSize; font-family: @fntBaseFamily;
 }
-a { color: @clrOrange; text-decoration: none; &:hover { text-decoration: underline; } }
-.slab { 
-  height: auto; width: @slabWidth; margin: 0 auto; float: none; padding: 0 8px;
-  overflow: hidden;
+
+body>header, body>article {
+  width: 900px; position: relative; margin: 0 auto;
 }
-.header { 
-  background-color: @clrBlue; color: white;
-  &.inner {
-    height: 180px; .slab { height: 180px; }
-    h1 { display: none; }
+body>header {
+  border-bottom: 3px solid @clrDarkBase;
+  svg {
+    display: inline-block; vertical-align: bottom; width: 96px; height: 96px; margin-right: 16px;
+    .part1 { fill: #6b83b7; }
+    .part2 { fill: #de60ad; }
+    .part3 { fill: #46af8e; }
   }
-  &.front {
-    height: 220px; .slab { height: 220px; }
-  }
-  h1 {
-    position: absolute; bottom: 100px; font-size: 1.4rem; font-weight: 300; width: auto;
-  }
-  .logo {
-    .floatblock-mixin(); width: 145px; position: absolute; top: 32px;
-    img { width: 100%; }
-  }
-  .home {
-    .floatblock-mixin(); width: auto; position: absolute; top: 36px; right: 8px;
-    color: white; text-decoration: none;
-    img { .floatblock-mixin(); width: 22px; height: 22px; margin: 0 10px 0 0; }
-    div { width: auto; }
-  }
-  .searchBox {
-    position: absolute; left: 0; right: 0; bottom: 40px; height: 40px;
-    background-color: white; border-radius: 40px;
-    overflow: hidden;
-    button {
-      .floatblock-mixin(); position: absolute; width: 24px; height: 24px;
-      background-color: transparent; top: 8px; left: 12px; cursor: pointer;
-      img { width: 100%; height: 100%; }
-    }
-    input {
-      .floatblock-mixin(); font-family: @fntBaseFamily; font-size: @fntBaseSize;
-      width: 100%; color: lighten(@clrText, 20%);
-      position: absolute; top: 8px; left: 42px; right: 16px;
-    }
+  .title {
+    display: inline-block; vertical-align: bottom; margin-top: 16px;
+    font-family: @fntTitleFamily; font-size: 42px; font-weight: bold; color: @clrDarkBase;
   }
 }
-.breadcrumb {
-  margin-top: 15px;
-  color: @clrTextLighter;
-  a { color: @clrTextLighter; &:hover { color: @clrOrange; text-decoration: none; } }
-  &.hidden { display: none; }
+body>footer {
+  display: flex; justify-content: center;
+  position: absolute; bottom: 0;
+  width: 100%; padding: 8px; font-size: 14px;
+  a:hover { text-decoration: none; }
 }
-.content {
-  margin: 30px 0 60px 0;
-  .searchRes {
-    font-weight: 600; color: lighten(@clrText, 20%); margin-bottom: 20px;
-    span { color: @clrText; }
-  }
-  h1, h2 { font-family: "Bariol"; font-weight: bold; }
-}
-.content.post { margin-top: 15px; }
-.content.post .slab { 
-  background-color: white; padding: 20px 40px 80px 40px;
-  box-shadow: 0 0 4px darken(@clrShoulder, 5%); border: 1px solid @clrBorder; border-radius: 4px;
-  h1 { font-size: 1.8rem; font-weight: 600; margin-bottom: 30px; }
-  h2 { font-size: 1.4rem; font-weight: 600; margin-top: 10px; margin-bottom: 20px; }
-  p {
-    margin-bottom: 15px;
-    &.description { 
-      color: @clrTextLight; margin-top: -26px; margin-bottom: 28px; padding-bottom: 28px;
-      border-bottom: 1px solid #d0d0d0; 
-    }
-  }
-  ol, ul { margin-bottom: 15px; padding-left: 30px; }
-  li { margin-bottom: 10px; padding-left: 5px; }
-  img { max-width: 100%; }
-}
-.article-box {
-  background-color: white; padding: 16px 24px; margin: 0 0 20px 0;
-  display: block; position: relative; float: left; width: 100%; box-sizing: border-box;
-  box-shadow: 0 0 4px darken(@clrShoulder, 5%); border: 1px solid @clrBorder; border-radius: 4px;
-  text-decoration: none; color: @clrText;
-  &:hover { background-color: #fff9f6; }
-  transition: background-color 0.5s ease;
-  h2 { font-size: 1.4rem; font-weight: 600; margin-bottom: 6px; }
-  p.summary { margin-bottom: 10px; color: @clrTextLight; }
-  p.author {
-    color: @clrTextLighter;
-    img { .floatblock-mixin(); width: 28x; height: 28px; border-radius: 24px; margin-right: 10px; }
-    span { .floatblock-mixin(); width: auto; font-size: 0.8rem; padding-top: 4px; }
-  }
+
+a { color: @clrDarkBase; text-decoration: none; &:hover { text-decoration: underline; } }
+h1 { 
+  font-size: 36px; font-family: @fntTitleFamily; font-weight: bold; color: #505050;
 }
 
 @media screen and (max-width: 912px) {
-  .content { padding: 0 16px; }
-  .slab { width: 100%; margin: 0; }
-  .content.post .slab { padding-left: 16px; padding-right: 16px;}
-  .header {
+  body {
     padding: 0 16px;
-    .slab { padding-left: 0; padding-right: 0; }
   }
+  body>header, body>article, body>footer {
+    width: 100%;
+  }
+  body>footer { position: relative;  margin: 56px 0 8px 0; }
 }

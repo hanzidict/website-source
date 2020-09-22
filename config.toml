@@ -6,20 +6,11 @@ layoutdir =  "layouts"
 staticdir =  "static"
 publishdir = "public"
 
+[params]
+  homeMotto = "Characters will never be the same again"
+
 [permalinks]
-  post = "/posts/:slug/"
-
-[outputFormats.SearchIndex]
-mediaType = "application/json"
-baseName = "searchindex"
-isPlainText = true
-notAlternative = true
-
-[outputFormats.SearchStore]
-mediaType = "application/json"
-baseName = "searchstore"
-isPlainText = true
-notAlternative = true
+  page = "/:filename/"
 
 [outputs]
-home = ["HTML", "searchindex", "searchstore"]
+home = ["HTML"]

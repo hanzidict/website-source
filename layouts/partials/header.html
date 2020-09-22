@@ -2,7 +2,6 @@
 <html>
 
 <head>
-  <title>{{ .Title }} - {{ .Site.Title }}</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="format-detection" content="telephone=no">
@@ -11,6 +10,7 @@
   <meta property="og:type" content="article" />
   <meta name="twitter:card" content="summary_large_image" />
   {{if .IsHome}}
+  <title>{{ .Site.Title }} - {{ .Site.Params.HomeMotto }} - </title>
   <meta property="og:title" content="{{ .Site.Title }}" />
   <meta name="description" content="">
   <meta name="keywords" content="" />
@@ -18,12 +18,15 @@
   <meta property="og:url" content="{{ .Site.BaseURL }}" />
   {{ end }}  
   {{if not .IsHome}}
+  <title>{{ .Title }} - {{ .Site.Title }}</title>
   <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}" />
   <meta name="description" content="{{ .Description }}">
   <meta name="keywords" content="{{ delimit .Keywords ", " }}" />
   <meta property="og:description" content="{{ .Description }}" />
   <meta property="og:url" content="{{ .Site.BaseURL }}{{ .Slug }}" />
-    {{ end }}  
+  {{ end }}
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <!--
   <link rel="icon" href="/images/favicon.ico?{{ now.Unix }}" type="image/icon" />
   <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,400i,600,700&amp;subset=latin-ext" rel="stylesheet">
@@ -32,3 +35,8 @@
 </head>
 
 <body>
+
+<header>
+  <svg class="glyph glyphSVG" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1024 1024"><path class="part1 rad" d="M 313 185 Q 358 125 372 116 Q 381 107 378 94 Q 375 82 351 60 Q 329 41 311 40 Q 295 41 300 61 Q 318 119 148 313 Q 138 320 136 327 Q 132 337 145 335 Q 190 328 298 203 L 313 185 Z"></path><path class="part1 rad" d="M 360 337 Q 478 217 498 206 Q 514 196 504 184 Q 491 172 458 152 Q 442 145 428 154 Q 419 158 349 178 Q 333 182 313 185 L 298 203 Q 317 212 398 199 Q 407 198 409 200 Q 413 203 407 213 Q 367 289 342 326 Q 335 336 332 344 L 360 337 Z"></path><path class="part1 rad" d="M 219 362 Q 185 338 165 346 Q 155 353 161 365 Q 176 383 180 450 Q 180 600 158 676 Q 134 763 84 852 Q 80 858 79 864 Q 78 874 87 871 Q 114 865 172 757 Q 178 742 185 726 Q 227 611 231 476 Q 234 392 245 392 L 219 362 Z"></path><path class="part1 rad" d="M 342 369 Q 376 359 416 353 Q 432 350 441 359 Q 451 365 454 411 Q 463 568 452 745 Q 451 770 441 778 Q 429 785 375 772 Q 362 768 362 777 Q 362 783 373 789 Q 422 828 447 858 Q 463 874 475 873 Q 485 872 496 847 Q 509 808 510 752 Q 495 419 513 380 Q 523 362 515 352 Q 506 339 468 319 Q 452 312 436 315 Q 411 324 360 337 L 332 344 Q 277 353 219 362 L 245 392 Q 272 385 302 377 L 342 369 Z"></path><path class="part1 rad" d="M 358 497 Q 377 490 402 484 Q 421 478 425 476 Q 429 469 427 464 Q 421 457 400 453 Q 379 450 359 460 L 317 476 Q 314 476 313 477 Q 286 484 255 489 Q 230 496 249 506 Q 276 515 316 509 L 358 497 Z"></path><path class="part1 rad" d="M 355 605 Q 377 598 405 591 Q 426 584 429 581 Q 435 574 431 569 Q 425 560 403 556 Q 381 553 358 564 Q 355 565 355 566 L 314 581 Q 310 581 309 582 Q 281 589 248 595 Q 221 602 241 613 Q 271 625 314 616 L 355 605 Z"></path><path class="part1 rad" d="M 355 566 Q 356 536 358 497 L 359 460 Q 359 457 367 400 Q 370 385 342 369 L 302 377 Q 301 377 302 378 Q 317 411 317 472 Q 317 473 317 476 L 316 509 Q 315 542 314 581 L 314 616 Q 314 760 324 778 Q 328 782 334 781 Q 343 775 350 731 Q 354 692 355 605 L 355 566 Z"></path><path class="part2" d="M 689 185 Q 741 172 787 167 Q 805 166 808 170 Q 815 179 814 202 Q 813 268 801 298 Q 786 326 761 323 Q 736 316 714 307 Q 692 300 707 322 Q 750 362 770 393 Q 783 409 798 396 Q 847 363 868 220 Q 872 186 886 167 Q 896 155 891 146 Q 884 136 835 116 Q 816 109 799 120 Q 778 133 700 150 Q 621 169 554 173 Q 538 174 536 182 Q 535 189 556 200 Q 578 213 596 208 Q 627 199 659 192 L 689 185 Z"></path><path class="part2" d="M 659 192 Q 659 270 550 389 Q 546 393 545 398 Q 545 402 549 401 Q 609 386 695 263 Q 707 244 714 235 Q 720 226 714 215 Q 702 194 689 185 L 659 192 Z"></path><path class="part3" d="M 610 508 Q 629 478 650 463 Q 663 451 652 440 Q 639 430 617 425 Q 598 421 588 424 Q 579 428 585 437 Q 591 455 535 576 Q 532 579 531 585 Q 527 598 539 593 Q 575 554 596 526 L 610 508 Z"></path><path class="part3" d="M 753 522 Q 852 498 855 496 Q 862 489 859 482 Q 852 472 827 466 Q 796 460 755 478 L 699 494 Q 656 501 610 508 L 596 526 Q 611 535 631 539 Q 643 540 700 533 L 753 522 Z"></path><path class="part3" d="M 751 659 Q 826 649 934 648 Q 952 647 956 639 Q 960 629 945 617 Q 893 581 845 597 Q 805 606 751 618 L 699 628 Q 620 640 530 656 Q 512 657 526 673 Q 539 685 555 689 Q 574 693 588 689 Q 640 673 699 665 L 751 659 Z"></path><path class="part3" d="M 703 904 Q 707 928 714 937 Q 720 944 727 942 Q 740 933 747 877 Q 754 816 752 754 Q 751 726 751 659 L 751 618 Q 751 575 753 522 L 755 478 Q 756 471 757 467 Q 760 449 763 435 Q 766 419 752 409 Q 721 388 707 386 Q 695 382 680 390 Q 671 397 679 407 Q 698 440 699 494 L 700 533 Q 700 576 699 628 L 699 665 Q 699 872 703 904 Z"></path></svg>
+  <div class="title">Hanzi Network Dictionary</div>
+</header>
